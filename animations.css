@@ -1,0 +1,108 @@
+.fade-in {
+    opacity: 0; /* Configura la opacidad inicial del elemento en 0 (invisible) */
+    animation: fadeIn 2s forwards; /* Aplica la animación 'fadeIn' durante 2 segundos y mantiene el estado final */
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0; /* Define el estado inicial de la animación con una opacidad de 0 */
+    }
+    to {
+      opacity: 1; /* Define el estado final de la animación con una opacidad de 1 (completamente visible) */
+    }
+  }
+  
+  .rotate {
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    position: relative;
+    animation-name: example; /* Especifica el nombre de la animación como 'example' */
+    animation-duration: 1s; /* Establece la duración de la animación en 1 segundo */
+    animation-delay: 1s; /* Agrega un retraso de 1 segundo antes de que comience la animación */
+    animation-iteration-count: infinite; /* Hace que la animación se repita infinitamente */
+    margin-bottom: 40px; /* Añade un margen inferior de 40 píxeles */
+  }
+  
+  .rotate {
+    animation: rotate 4s infinite linear; /* Aplica la animación 'rotate' durante 4 segundos con repetición infinita y un movimiento lineal */
+  }
+  
+  @keyframes rotate {
+    from {
+      transform: rotate(
+        0deg
+      ); /* Define el estado inicial de la animación con una rotación de 0 grados */
+    }
+    to {
+      transform: rotate(
+        360deg
+      ); /* Define el estado final de la animación con una rotación de 360 grados (una vuelta completa) */
+    }
+  }
+  
+  .bounce {
+    animation: bounce 1s infinite; /* Aplica la animación 'bounce' durante 1 segundo con repetición infinita */
+  }
+  
+  @keyframes bounce {
+    0%,
+    100% {
+      transform: translateY(
+        0
+      ); /* Define los estados inicial y final de la animación sin desplazamiento vertical */
+    }
+    50% {
+      transform: translateY(
+        -20px
+      ); /* Define el estado intermedio de la animación con un desplazamiento vertical de -20 píxeles */
+    }
+  }
+  
+  .container {
+    display: flex;
+    justify-content: center; /* Centra horizontalmente el contenido */
+    align-items: center; /* Centra verticalmente el contenido */
+  }
+  
+  .typewriter h1 {
+    overflow: hidden; /* Asegura que el contenido no se revele hasta que inicie la animación */
+    border-right: 0.15em solid orange; /* El cursor del mecanógrafo */
+    white-space: nowrap; /* Mantiene el contenido en una sola línea */
+    margin: auto; /* Crea el efecto de desplazamiento a medida que se escribe */
+    letter-spacing: 0.15em; /* Ajusta según sea necesario */
+    animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite; /* Aplica las animaciones */
+  }
+  
+  /*En este código, el valor steps() en la línea animation: typing 3.5s steps(40, end), 
+  blink-caret 0.75s step-end infinite; se utiliza para definir la animación de "typing" 
+  con una progresión escalonada o por pasos.
+  
+  La propiedad steps() especifica cómo se dividirá la duración total de la animación en 
+  pasos discretos. En este caso, se utiliza steps(40, end), lo que significa que la 
+  animación se dividirá en 40 pasos iguales y se completará en el último paso sin 
+  interpolación.
+  
+  Este enfoque se utiliza para simular el efecto de escritura a máquina, donde el 
+  texto se muestra gradualmente en cada paso hasta que se completa. Puedes ajustar 
+  los valores en steps() según tus necesidades para modificar la velocidad de la animación 
+  o el número de pasos.*/
+  
+  @keyframes typing {
+    from {
+      width: 0; /* El ancho inicial es 0 */
+    }
+    to {
+      width: 100%; /* El ancho final es 100%, se "escribe" completamente */
+    }
+  }
+  
+  @keyframes blink-caret {
+    from,
+    to {
+      border-color: transparent; /* El color del borde es transparente en los estados inicial y final */
+    }
+    50% {
+      border-color: orange; /* En el estado intermedio, el color del borde es naranja, haciendo que el cursor parpadee */
+    }
+  }
